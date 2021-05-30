@@ -1,13 +1,12 @@
 // rafce
 import React from "react"
-import Navbar from "../components/Navbar"
+import Layout from "../components/Layout"
 
 const about = () => {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <h1>hello from about page</h1>
-    </div>
+    </Layout>
   )
 }
 
