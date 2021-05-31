@@ -5,15 +5,10 @@ import Layout from "../components/Layout"
 export default function Home() {
   return (
     <Layout>
-      <h1 style={{ color: "red", textTransform: "capitalize" }}>home page</h1>
-      <div>
-        <Link to="/about">about</Link>
-      </div>
-      <div>
-        <Link to="/company/history">history</Link>
-      </div>
-      <a href="/about">reg link</a>
-      <a href="https://www.gatsbyjs.com/docs/how-to">gatsby docs</a>
+      {/* global cssよりinline cssの方が強い */}
+      <h1 style={{ color: "green", textTransform: "capitalize" }}>home page</h1>
+      <h1>hello world</h1>
+      <h1>hello people</h1>
     </Layout>
   )
 }
