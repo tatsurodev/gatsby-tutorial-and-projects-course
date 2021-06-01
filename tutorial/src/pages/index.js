@@ -2,11 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import { page, text } from "../examples/home.module.css"
+import { ExampleButton } from "../examples/button"
 
 export default function Home() {
   return (
     <Layout>
       <div className={page}>
+        <ExampleButton>click me</ExampleButton>
         {/* global cssよりinline cssの方が強い */}
         <h1>home page</h1>
         <h1>hello world</h1>
