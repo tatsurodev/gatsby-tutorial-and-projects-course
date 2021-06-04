@@ -9,7 +9,8 @@ import { useStaticQuery, graphql } from "gatsby"
 }
 */
 const getData = graphql`
-  {
+  # query nameはgatsby内でuniqueであること必須、またquery nameが変わった時はgatsby cleanが必要
+  query FirstQuery {
     site {
       info: siteMetadata {
         author
