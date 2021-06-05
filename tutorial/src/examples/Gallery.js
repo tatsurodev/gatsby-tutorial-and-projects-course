@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 // StaticImageではdynamic dataを扱えないのでGatsbyImageを使用
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const query = graphql`
@@ -31,10 +31,12 @@ const Gallery = () => {
     <Wrapper>
       {nodes.map((image, index) => {
         const { name } = image
+        // childImageSharp propertyが存在しない時にgatsbyImageDataにaccessしようとするとerrorとなるので、getImage helperでoptional chainingを行い、error防止。引数はchildImageSharpをpropertyに持つobjectをset
+        const pathToImage = getImage(image)
         return (
           <article key={index} className="item">
             <GatsbyImage
-              image={image.childImageSharp.gatsbyImageData}
+              image={pathToImage}
               alt={name}
               className="gallery-img"
             />
