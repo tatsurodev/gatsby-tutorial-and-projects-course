@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs"
 import Layout from "../components/Layout"
 import slugify from "slugify"
+import SEO from "../components/SEO"
 
 // ファイル名で指定したfiled(ここではtitle)は、component内ではprops.params.titleで、graphql内ではvariable(ここでは$title)でaccessできる
 const RecipeTemplate = ({ data }) => {
@@ -21,6 +22,7 @@ const RecipeTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={title} description={description} />
       <main className="page">
         <div className="recipe-page">
           {/* hero */}
