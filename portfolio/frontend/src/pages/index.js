@@ -7,7 +7,9 @@ import Projects from "../components/Projects"
 import Seo from "../components/Seo"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
+  const {
+    allStrapiProject: { nodes: projects },
+  } = data
 
   return (
     <>
@@ -15,6 +17,7 @@ const IndexPage = ({ data }) => {
         <Hero />
         <Services />
         <Jobs />
+        <Projects title="featured projects" showLink projects={projects} />
       </main>
     </>
   )
