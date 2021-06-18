@@ -6,7 +6,15 @@
 
 module.exports = {
   /* Your site config here */
-
+  siteMetadata: {
+    title: `WebDev Portfolio`,
+    description: `Awesome WebDev Portfolio built with Gatsby and Strapi`,
+    // propsのtitleTemplateに渡された値が%sに使用される
+    titleTemplate: `%s | WebDev Portfolio`,
+    url: `https://tatsurodev-gatsby-tutorial-and-projects-course-portfolio.netlify.app`,
+    twitterUsername: `@john_smilga`,
+    image: `/mainImg.png`,
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
