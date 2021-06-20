@@ -1,3 +1,4 @@
+// seo componentの雛形 https://www.gatsbyjs.com/docs/add-seo-component#seo-component
 import React from "react"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <Seo title="Home" />
       <main>
         <Hero />
         <Services />
