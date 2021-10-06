@@ -4,9 +4,21 @@ import Hero from '../components/Hero'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 
-const CategoryTemplate = ({ data }) => {
-  console.log(data)
-  return <h2>category template</h2>
+const CategoryTemplate = props => {
+  const {
+    data: {
+      allMdx: { nodes: posts },
+    },
+  } = props
+  const {
+    pageContext: { category },
+  } = props
+  return (
+    <Layout>
+      <Hero />
+      <Posts posts={posts} title={`category /  ${category}`} />
+    </Layout>
+  )
 }
 
 export const query = graphql`
