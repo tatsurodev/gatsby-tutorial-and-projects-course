@@ -11,6 +11,7 @@ export const RegVideo = () => {
   )
 }
 
+// https://www.gatsbyjs.com/docs/how-to/images-and-media/working-with-video/
 export const Video = ({ src, title, ...props }) => {
   return (
     <IframeVideoWrapper>
