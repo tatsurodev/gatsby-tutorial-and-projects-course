@@ -1,17 +1,8 @@
 import { Link } from 'gatsby'
 import { FiInfo } from 'react-icons/fi'
-import { Counter, LikeButton } from '../components/Complete'
+import { Counter, LikeButton, RegVideo } from '../components/Complete'
 
 <section className="mdx-page">
-
-<!-- ここはhtml内なのでhtmlの方法でcomment out -->
-<!-- mdx 内の image に styling を加えるために wrapper divを使用、imageはp>span.gatsby-resp-image-linkの中に設置される、white space があると image が正しく表示されないので注意 -->
-
-<div className="mdx-img">
-
-![nice image](../assets/gatsby-1.png)
-
-</div>
 
 ## my first mdx file
 
@@ -66,6 +57,9 @@ const LikeButton = () => {
 ```
 
 <LikeButton />
+
+<h2>video components</h2>
+<RegVideo />
 
 <Link to="/posts" className="btn center-btn">
   all posts
