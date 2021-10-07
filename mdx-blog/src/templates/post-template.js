@@ -11,7 +11,7 @@ import Title from '../components/Banner/Title'
 const PostTemplate = ({ data }) => {
   const {
     mdx: {
-      frontmatter: { title, category, image, date },
+      frontmatter: { title, category, image, date, embeddedImages },
       body,
     },
   } = data
@@ -32,7 +32,7 @@ const PostTemplate = ({ data }) => {
             <p>{date}</p>
             <div className="underline"></div>
           </div>
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         </article>
         {/* banner */}
         <article>
@@ -52,6 +52,11 @@ export const query = graphql`
         slug
         title
         readTime
+        embeddedImages {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         image {
           childImageSharp {
             gatsbyImageData
