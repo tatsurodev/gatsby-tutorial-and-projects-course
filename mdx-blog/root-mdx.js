@@ -1,11 +1,17 @@
 // gatsby-browser.js, gatsby-ssr.jsの両方に記述するcodeは、変更の際両方のcodeを変更しないといけなくなるのでまとめておく
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
-import { Headings } from './src/components/Complete'
+import { Headings, Code } from './src/components/Complete'
 
+const Testing = ({ children }) => {
+  return <code className="code">{children}</code>
+}
+
+// https://mdxjs.com/table-of-components/
 const components = {
   h2: Headings.myH2,
   h4: Headings.myH4,
+  inlineCode: Code,
 }
 
 export const wrapMDX = ({ element }) => {
